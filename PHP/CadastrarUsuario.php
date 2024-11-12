@@ -17,6 +17,7 @@
 
         $resp->execute();  
 
+        header('Location: ../Index.html');
     }catch(Exception $erro){
         echo $erro->getMessage();
     }
