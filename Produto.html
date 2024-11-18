@@ -6,5 +6,30 @@
     <title>GenStock</title>
 </head>
 <body>
-    
+    <form action="./PHP/Produto.php" method="POST">
+        <label for="Produto">Nome:</label>
+        <input type="text" name="Produto" id="Produto">
+        <br>
+        <label for="Tipo">Tipo: </label>
+        <select name="Tipo" id="Tipo">
+            <option value="SACO">Saco</option>
+            <option value="CAIXA">Caixa</option>
+        </select>
+        <br>
+        <label for="Kg">Kg:</label>
+        <input type="text" name="Kg" id="Kg">
+        <br>
+        <label for="Valor_Comprado">Valor comprado:</label>
+        <input type="" name="Valor_Comprado" id="Valor_Comprado">
+        <br>
+        <label for="Porcentagem">Porcentagem:</label>
+        <input type="text" name="Porcentagem" id="Porcentagem">
+        <br>
+        <p id="valorFinal">Valor Final: R$ 0.00</p>
+        <br>
+        <button type="submit">Confirmar</button>
+    </form>
+
+
+    <script src="./JS/Produto.js"></script>
 </html>
