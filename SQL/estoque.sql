@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16/11/2024 às 00:00
+-- Tempo de geração: 18/11/2024 às 23:14
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -33,8 +33,16 @@ CREATE TABLE `produto` (
   `Tipo` enum('SACO','CAIXA') NOT NULL,
   `Kg` double NOT NULL,
   `Valor_Comprado` double NOT NULL,
-  `Valor_Vender` double NOT NULL
+  `Valor_Vender` double NOT NULL,
+  `Porcentagem` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `produto`
+--
+
+INSERT INTO `produto` (`id`, `Produto`, `Tipo`, `Kg`, `Valor_Comprado`, `Valor_Vender`, `Porcentagem`) VALUES
+(1, 'Batata', 'SACO', 24, 142.29, 184.977, 30);
 
 -- --------------------------------------------------------
 
@@ -53,7 +61,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `Usuario`, `Senha`) VALUES
-(9, '123', '$2y$10$zuPiLRPB8M.169Zg2O6Kwew8SHZegbGGzi0Gu4.jgDrDeWtgD0T0q');
+(9, '123', '$2y$10$zuPiLRPB8M.169Zg2O6Kwew8SHZegbGGzi0Gu4.jgDrDeWtgD0T0q'),
+(10, 'Kleriston', '$2y$10$PuqiRMoNfi4iTTm.hckJwO5rmksQjklw/0P8sfi5jePiU00HXEbIS');
 
 --
 -- Índices para tabelas despejadas
@@ -79,13 +88,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
