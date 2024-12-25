@@ -26,27 +26,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GenStock - Cadastro</title>
-</head>
-<body>
-    <form action="" method="POST">
-        <label for="usuario">Usuário:</label>
-        <input type="text" name="Usuario" id="usuario" required>
-        <br>
-        <label for="senha">Senha:</label>
-        <input type="password" name="Senha" id="senha" required>
-        <br>
-        <button type="submit">Enviar</button>
-    </form>
-
-    <?php if (isset($_GET['success']) && $_GET['success'] === 'cadastro'): ?>
-        <p style="color: green;">Usuário cadastrado com sucesso!</p>
-    <?php endif; ?>
-</body>
-</html>
