@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (password_verify($senha, $dados['senha'])) {
                 session_start();
                 $_SESSION['id_usuario'] = $dados['id'];
-                header('Location: ./Portal.html');
+                header('Location: ../PUBLICO/Portal.html');
                 exit;
             } else {
                 header('Location: ./?erro=senha');
@@ -36,35 +36,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GenStock</title>
-</head>
-<body>
-    <form action="" method="POST">
-        <label for="Usuario">Usuário:</label>
-        <input type="text" name="Usuario" id="Usuario" required>
-        <br>
-        <label for="Senha">Senha:</label>
-        <input type="password" name="Senha" id="Senha" required>
-        <br>
-        <button type="submit">Enviar</button>
-    </form>
-
-    <?php if (isset($_GET['erro'])): ?>
-        <p style="color: red;">
-            <?php
-            if ($_GET['erro'] === 'usuario') {
-                echo "Usuário não encontrado.";
-            } elseif ($_GET['erro'] === 'senha') {
-                echo "Senha incorreta.";
-            }
-            ?>
-        </p>
-    <?php endif; ?>
-</body>
-</html>
