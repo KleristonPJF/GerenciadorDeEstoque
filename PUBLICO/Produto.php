@@ -1,4 +1,6 @@
 <?php
+    include '../PHP/autenticarSessao.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $produto = $_POST['Produto'];
     $tipo = $_POST['Tipo'];

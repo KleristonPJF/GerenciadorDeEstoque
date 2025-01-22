@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (password_verify($senha, $dados['senha'])) {
                 session_start();
                 $_SESSION['id_usuario'] = $dados['id'];
-                header('Location: ../PUBLICO/Portal.html');
+                header('Location: ../PUBLICO/Portal.php');
                 exit;
             } else {
                 header('Location: ./?erro=senha');
