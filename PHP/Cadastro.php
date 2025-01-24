@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $resp->execute();
 
-        header('Location: ./?success=cadastro');
+        header('Location: ../PUBLICO/Login.html');
         exit;
     } catch (Exception $erro) {
         echo "Erro: " . $erro->getMessage();

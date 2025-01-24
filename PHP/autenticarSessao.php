@@ -1,8 +1,7 @@
 <?php
 session_start();
-
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: ../PUBLICO/login.php");
-    exit();
+if (!isset($_SESSION['id_usuario'])) {
+    header('Location: ../PUBLICO/Login.html');
+    exit;
 }
 ?>

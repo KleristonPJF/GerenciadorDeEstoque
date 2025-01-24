@@ -23,11 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header('Location: ../PUBLICO/Portal.php');
                 exit;
             } else {
-                header('Location: ./?erro=senha');
+                header('Location: ../PUBLICO/Login.html');
                 exit;
             }
         } else {
-            header('Location: ./?erro=usuario');
+            header('Location: ../PUBLICO/Login.html');
             exit;
         }
     } catch (Exception $erro) {
