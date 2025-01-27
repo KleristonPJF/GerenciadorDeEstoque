@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn = new PDO("mysql:host=localhost;dbname=Estoque", "root", "");
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "INSERT INTO produto (Produto, Tipo, Kg, Valor_Comprado, Porcentagem, Valor_Vender) 
+        $sql = "INSERT INTO Produto (Produto, Tipo, Kg, Valor_Comprado, Porcentagem, Valor_Vender) 
                 VALUES (:produto, :tipo, :kg, :valor_comprado, :porcentagem, :valor_vender)";
 
         $stmt = $conn->prepare($sql);
@@ -40,7 +40,7 @@ try {
     $conn = new PDO("mysql:host=localhost;dbname=Estoque", "root", "");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT * FROM produto";
+    $sql = "SELECT * FROM Produto";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
